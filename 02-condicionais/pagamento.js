@@ -10,20 +10,25 @@ Condições:
 
 */
 
-const valorProduto = 100;
-const formaPagamento = 1;
-let valorProdutoFinal;
-
-if (formaPagamento == 1) {
-    const desconto = (valorProduto * 10) / 100;
-    valorProdutoFinal = valorProduto - desconto;
-}else if (formaPagamento == 2) {
-    const desconto = (valorProduto * 15) / 100;
-    valorProdutoFinal = valorProduto - desconto;
-}else if (formaPagamento == 3) {
-    valorProdutoFinal = valorProduto;
-}else{
-    const juros = (valorProduto * 10) / 100;
-    valorProdutoFinal = valorProduto + juros;
+function aplicarDesconto(valorProduto, desconto) {
+    return valorProduto - ((valorProduto * desconto) / 100);    
 }
-console.log('O valor final do produto é: ', valorProdutoFinal);
+function aplicarJuros(valorProduto, juros) {
+    return valorProduto - ((valorProduto * juros / 100));    
+}
+(function () {
+    const valorProduto = 100;
+    const formaPagamento = 1;
+    let valorProdutoFinal;
+
+    if (formaPagamento == 1) {
+        valorProdutoFinal = aplicarDesconto(valorProduto, 10);
+    }else if (formaPagamento == 2) {
+        valorProdutoFinal = aplicarDesconto(valorProduto, 15);
+    }else if (formaPagamento == 3) {
+        valorProdutoFinal = valorProduto;
+    }else{
+        valorProdutoFinal = aplicarJuros(valorProduto, 10);
+    }
+    console.log('O valor final do produto é: ', valorProdutoFinal);    
+})();
