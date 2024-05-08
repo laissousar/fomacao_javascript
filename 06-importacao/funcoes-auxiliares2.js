@@ -1,8 +1,8 @@
 function print(texto) {
     console.log(texto);
 }
-function gets(media) {
-    return media;
+function gets(valor) {
+    return valor;
 }
 
-module.exports = {gets, print};
+module.exports = {gets, print}

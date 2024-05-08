@@ -4,6 +4,7 @@ Imprima o maior par e o menor impar.
 
 */
 const {gets, print} = require("./funcoes-auxiliares")
+//import { gets } from "./funcoes-auxiliares";
 const quantidadeDeNumeros = 10;
 let maiorPar = 0;
 let menorImpar = null;
@@ -21,5 +22,5 @@ for(let i = 0; i < quantidadeDeNumeros; i++){
         }
     }
 }
-print(maiorPar);
-print(menorImpar);
+/* print(maiorPar);
+print(menorImpar); */
